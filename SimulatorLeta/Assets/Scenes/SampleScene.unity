@@ -8298,6 +8298,7 @@ MonoBehaviour:
   throttleIncrement: 1
   maxThrust: 700
   responsiveness: 30
+  lift: 135
   hud: {fileID: 2081072747}
 --- !u!1001 &1546133176
 PrefabInstance:
