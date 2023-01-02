@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlaneController : MonoBehaviour
 {
     [Header("Plane stats")]
     [Tooltip("How much the throttle ramps up or down.")]
-    public float throttleIncrement = 0.1f;
+    public float throttleIncrement = 1f;
     [Tooltip("Maximum engine thrust when at 100% throttle.")]
-    public float maxThrust = 200f;
+    public float maxThrust = 700f;
     [Tooltip("How responsive the plane is when rolling, pitching and yawing.")]
-    public float responsiveness = 10f;
+    public float responsiveness = 30f;
 
     private float throttle;     // Percentage of maximum engine thrust currently being used.
     private float roll;         // Tilting left to right.
@@ -24,6 +25,7 @@ public class PlaneController : MonoBehaviour
     }
 
     Rigidbody rb;
+    [SerializeField] TextMeshProUGUI hud;
 
     // Start is called before the first frame update
     private void Start() // Awake()
@@ -39,8 +41,8 @@ public class PlaneController : MonoBehaviour
         yaw = Input.GetAxis("Yaw");
 
         // Handle throttle value being sure to clamp it between 0 and 100.
-        if (Input.GetKey(KeyCode.Space)) throttle += throttleIncrement;
-        else if (Input.GetKey(KeyCode.LeftControl)) throttle -= throttleIncrement;
+        if (Input.GetKey(KeyCode.LeftShift)) throttle += throttleIncrement;
+        else if (Input.GetKey(KeyCode.Space)) throttle -= throttleIncrement;
         throttle = Mathf.Clamp(throttle, 0f, 100f);
     }
 
@@ -48,6 +50,7 @@ public class PlaneController : MonoBehaviour
     private void Update()
     {
         HandleInputs();
+        UpdateHUD();
     }
 
     private void FixedUpdate()
@@ -57,6 +60,13 @@ public class PlaneController : MonoBehaviour
         rb.AddTorque(transform.up * yaw * responseModifier);
         rb.AddTorque(transform.right * pitch * responseModifier);
         rb.AddTorque(transform.forward * roll * responseModifier);
+    }
+
+    private void UpdateHUD() 
+    {
+        hud.text = "Throttle " + throttle.ToString("F0") + "%\n";
+        hud.text += "Airspeed: " + (rb.velocity.magnitude * 3.6f).ToString("F0") + "km/h\n";
+        hud.text += "Altitude: " + transform.position.y.ToString("F0") + "%\n";
     }
 
 }
