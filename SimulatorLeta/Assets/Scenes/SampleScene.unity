@@ -140,15 +140,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4280867918924278, guid: 4d4b1a35503bb5347a295cbc1584f8a4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4280867918924278, guid: 4d4b1a35503bb5347a295cbc1584f8a4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4280867918924278, guid: 4d4b1a35503bb5347a295cbc1584f8a4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4280867918924278, guid: 4d4b1a35503bb5347a295cbc1584f8a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -209,8 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4620f97e9fb804a97957a9ea5b211e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _go: {fileID: 1504597334}
+  RaycastStart: {fileID: 1149880434}
   _speed: 20
+  _missile: {fileID: 128133122}
 --- !u!54 &128133126
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     Rigidbody _rb;
-    public GameObject _go;
+    [SerializeField] private Transform RaycastStart;
     
     [Header("Missile attributes")]
     [Tooltip("The speed at which the missile is fired.")]
@@ -17,10 +17,12 @@ public class Missile : MonoBehaviour
     private Vector3 positionOffset;
     [Tooltip("The initial offset in rotation between the plane and the missile.")]
     private Quaternion rotationOffset;
-    
+    [Tooltip("The result of a Raycast hit.")]
+    private RaycastHit hit;
+    private Vector3 targetPosition;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         isFired = false;
@@ -30,23 +32,57 @@ public class Missile : MonoBehaviour
 
     void FireMissile()
     {
-        // Vector3 localForward = _rb.transform.worldToLocalMatrix.MultiplyVector(transform.forward);
         Vector3 localForward = _rb.transform.right;
         _rb.AddForce(localForward * _speed, ForceMode.Impulse);
+    }
+
+    void RotateMissileToTraget()
+    {
+        Vector3 missileDirection = targetPosition - _rb.transform.position;
+        Quaternion rotation = Quaternion.LookRotation(missileDirection);
+        _rb.MoveRotation(rotation);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !isFired)
+        // Drawing the Raycast beam in the scene and checking if it hit something
+        Ray ray = new Ray(RaycastStart.position, -RaycastStart.TransformDirection(Vector3.forward));
+
+        if (Physics.Raycast(ray, out hit))
         {
-            FireMissile();
-            isFired = true;
-        }
-        else if (!isFired)
+            Debug.DrawRay(RaycastStart.position, -RaycastStart.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+            targetPosition = hit.point;
+            RotateMissileToTraget();
+
+            if (Input.GetButtonDown("Fire1") && !isFired)
+            {
+                
+                FireMissile();
+                isFired = true;
+            }
+            else if (!isFired)
+            {
+                _rb.transform.localPosition = positionOffset;
+                _rb.transform.localRotation = rotationOffset;
+            }
+        } 
+        else
         {
-            _rb.transform.localPosition = positionOffset;
-            _rb.transform.localRotation = rotationOffset;
+            Debug.DrawRay(RaycastStart.position, -RaycastStart.TransformDirection(Vector3.forward) * 100000, Color.green);
+
+            if (Input.GetButtonDown("Fire1") && !isFired)
+            {
+                FireMissile();
+                isFired = true;
+            }
+            else if (!isFired)
+            {
+                _rb.transform.localPosition = positionOffset;
+                _rb.transform.localRotation = rotationOffset;
+            }
         }
+
+        
     }
 }
