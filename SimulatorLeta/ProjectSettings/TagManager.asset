@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Destructable
+  - Siguran
   layers:
   - Default
   - TransparentFX

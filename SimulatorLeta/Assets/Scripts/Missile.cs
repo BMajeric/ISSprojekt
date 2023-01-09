@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Missile : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class Missile : MonoBehaviour
     private RaycastHit hit;
     private Vector3 targetPosition;
 
+     
+
+    
 
     void Awake()
     {
@@ -52,6 +56,9 @@ public class Missile : MonoBehaviour
         {
             Instantiate(_explosion, collision.transform.position, Quaternion.identity);
             Destroy(collision.collider.gameObject);
+            SceneManager.LoadScene(2);
+             
+            
         }
 
         Destroy(gameObject);
@@ -59,6 +66,7 @@ public class Missile : MonoBehaviour
 
     private void FireMissile()
     {
+        
         _smokeTrail.SetActive(true);
         Vector3 localForward = transform.forward;
         _rb.AddForce(localForward * _speed, ForceMode.Impulse);
@@ -116,4 +124,6 @@ public class Missile : MonoBehaviour
         }
 
     }
+
+    
 }
