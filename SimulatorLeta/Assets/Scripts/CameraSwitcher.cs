@@ -12,7 +12,9 @@ public class CameraSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("1Key")){
+        if(!PauseMenu.isPaused){
+            
+            if(Input.GetButtonDown("1Key")){
             cam1.SetActive(true);
             cam2.SetActive(false);
             ui.SetActive(true);
@@ -22,5 +24,7 @@ public class CameraSwitcher : MonoBehaviour
             cam2.SetActive(true);
             ui.SetActive(false);
         }
+        }
+        
     }
 }

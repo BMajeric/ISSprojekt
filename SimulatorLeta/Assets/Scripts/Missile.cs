@@ -83,8 +83,9 @@ public class Missile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Drawing the Raycast beam in the scene and checking if it hit something
-        Ray ray = new Ray(RaycastStart.position, -RaycastStart.TransformDirection(Vector3.forward));
+        if(!PauseMenu.isPaused){
+            
+             Ray ray = new Ray(RaycastStart.position, -RaycastStart.TransformDirection(Vector3.forward));
 
         if (Physics.Raycast(ray, out hit))
         {
@@ -122,6 +123,9 @@ public class Missile : MonoBehaviour
                 _rb.transform.localRotation = rotationOffset;
             }
         }
+          
+        }
+       
 
     }
 

@@ -51,9 +51,11 @@ public class PlaneController : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {
+    {   
+        if(!PauseMenu.isPaused){
         HandleInputs();
         UpdateHUD();
+        }
     }
 
     private void FixedUpdate()
