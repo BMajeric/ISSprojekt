@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -915,7 +915,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24528
+  m_Name: pb_Mesh55376
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11742,15 +11742,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 291.1
+      value: 289.5
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.14
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1509.5
+      value: 1567.02
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11838,6 +11838,20 @@ MonoBehaviour:
   responsiveness: 30
   lift: 200
   hud: {fileID: 2081072747}
+--- !u!114 &1504597347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504597334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413880200b7b16d45b3647a0076fc6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1823102363}
+  kamera: {fileID: 963194225}
 --- !u!1001 &1546133176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12506,14 +12520,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 5000
   field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -12533,7 +12547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780468694}
   m_LocalRotation: {x: -0.44383925, y: -0, z: -0, w: -0.8961065}
-  m_LocalPosition: {x: 0, y: 123.369995, z: -128.90015}
+  m_LocalPosition: {x: 0, y: 123.369995, z: -112}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
