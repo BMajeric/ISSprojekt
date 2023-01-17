@@ -7,9 +7,13 @@ using UnityEngine.SceneManagement;
 public class Missile : MonoBehaviour
 {
     Rigidbody _rb;
-    [SerializeField] private Transform RaycastStart;
+    
 
     [Header("Missile attributes")]
+
+    [Tooltip("Transforms to calculate the raycast direction.")]
+    [SerializeField] private Transform RaycastStart1;
+    [SerializeField] private Transform RaycastStart2;
 
     [Tooltip("The speed at which the missile is fired.")]
     [SerializeField] private float _speed = 20f;
@@ -33,9 +37,6 @@ public class Missile : MonoBehaviour
     private RaycastHit hit;
     private Vector3 targetPosition;
 
-     
-
-    
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class Missile : MonoBehaviour
     void Start()
     {
         _smokeTrail.SetActive(false);
+        Physics.IgnoreLayerCollision(3, 6);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -68,33 +70,24 @@ public class Missile : MonoBehaviour
     {
         
         _smokeTrail.SetActive(true);
+        _rb.transform.LookAt(targetPosition);
         Vector3 localForward = transform.forward;
         _rb.AddForce(localForward * _speed, ForceMode.Impulse);
     }
-
-    private void RotateMissileToTraget()
-    {
-        Vector3 missileDirection = targetPosition - _rb.transform.position;
-        Quaternion rotation = Quaternion.LookRotation(missileDirection, missileDirection);
-        _rb.MoveRotation(rotation);
-        
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
         if(!PauseMenu.isPaused){
-            
-             Ray ray = new Ray(RaycastStart.position, -RaycastStart.TransformDirection(Vector3.forward));
+            Vector3 RaycastDirection = RaycastStart1.position - RaycastStart2.position;
+            Ray ray = new Ray(RaycastStart1.position, RaycastDirection);
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.DrawRay(RaycastStart.position, -RaycastStart.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+            Debug.DrawRay(RaycastStart1.position, RaycastDirection * hit.distance, Color.red);
             targetPosition = hit.point;
-            if (!isFired)
-            {
-                RotateMissileToTraget();
-            }
+            
 
             if (Input.GetButtonDown("Fire1") && !isFired)
             {
@@ -110,7 +103,7 @@ public class Missile : MonoBehaviour
         } 
         else
         {
-            Debug.DrawRay(RaycastStart.position, -RaycastStart.TransformDirection(Vector3.forward) * 100000, Color.green);
+            Debug.DrawRay(RaycastStart1.position, RaycastDirection * 100000, Color.green);
 
             if (Input.GetButtonDown("Fire1") && !isFired)
             {

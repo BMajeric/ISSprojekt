@@ -10,10 +10,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Rocket
   - Water
   - UI
-  - 
+  - Ignore Rocket
   - Camera2
   - 
   - 

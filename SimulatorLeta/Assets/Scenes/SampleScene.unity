@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -357,6 +357,51 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!1 &150499829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150499830}
+  - component: {fileID: 150499831}
+  m_Layer: 0
+  m_Name: Sight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &150499830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150499829}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.08, y: 8.09, z: 28.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1504597338}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &150499831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150499829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &174500793
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,10 +535,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &175069688
 BoxCollider:
@@ -566,7 +611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175069686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 293.49, y: 12.39, z: 1138.12}
+  m_LocalPosition: {x: 293.49, y: 65.6, z: 1138.12}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -870,7 +915,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34130
+  m_Name: pb_Mesh24528
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1035,9 +1080,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357015769}
     m_Modifications:
+    - target: {fileID: 4618066989006628531, guid: 219d51f7f380a7f4093f3fd1215a118d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8410181524588170476, guid: 219d51f7f380a7f4093f3fd1215a118d, type: 3}
       propertyPath: m_Name
       value: Hangar_part_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410181524588170476, guid: 219d51f7f380a7f4093f3fd1215a118d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534692521005256077, guid: 219d51f7f380a7f4093f3fd1215a118d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9222570651910526550, guid: 219d51f7f380a7f4093f3fd1215a118d, type: 3}
       propertyPath: m_RootOrder
@@ -1102,7 +1159,7 @@ GameObject:
   - component: {fileID: 324306799}
   - component: {fileID: 324306798}
   - component: {fileID: 324306797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hangar_part_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,6 +1312,10 @@ PrefabInstance:
     - target: {fileID: 3824991739996977901, guid: 87fbfc3224b1b454cb612fc112128a39, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824991739996977901, guid: 87fbfc3224b1b454cb612fc112128a39, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3824991739996977901, guid: 87fbfc3224b1b454cb612fc112128a39, type: 3}
       propertyPath: m_TagString
@@ -8044,7 +8105,7 @@ GameObject:
   - component: {fileID: 558488861}
   - component: {fileID: 558488860}
   - component: {fileID: 558488859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_(0.00, 0.00, 1000.00)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8243,6 +8304,18 @@ PrefabInstance:
     - target: {fileID: 826457029730534768, guid: 4fbefc7b93407ce4c9601f64d1bf35a2, type: 3}
       propertyPath: m_Name
       value: Hangar_part_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 826457029730534768, guid: 4fbefc7b93407ce4c9601f64d1bf35a2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867596339870275808, guid: 4fbefc7b93407ce4c9601f64d1bf35a2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516303264614965957, guid: 4fbefc7b93407ce4c9601f64d1bf35a2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fbefc7b93407ce4c9601f64d1bf35a2, type: 3}
@@ -9370,6 +9443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1504597338}
     m_Modifications:
+    - target: {fileID: 2900683151636530783, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3669557367380565722, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -9392,7 +9469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669557367380565722, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.18
+      value: -5.7
       objectReference: {fileID: 0}
     - target: {fileID: 3669557367380565722, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9431,8 +9508,28 @@ PrefabInstance:
       value: PfCruiseMissile
       objectReference: {fileID: 0}
     - target: {fileID: 3956545706807500900, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956545706807500900, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062500582303192236, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384559830350647515, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026480591303422566, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194706773887526855, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9085da0555bc234438b1ba4a3a7065d4, type: 3}
@@ -10038,7 +10135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149880434}
   - component: {fileID: 1149880433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UIFighter22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10368,8 +10465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4620f97e9fb804a97957a9ea5b211e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RaycastStart: {fileID: 1149880434}
-  _speed: 100
+  RaycastStart1: {fileID: 150499830}
+  RaycastStart2: {fileID: 963194228}
+  _speed: 200
   _smokeTrail: {fileID: 1817524199}
   _explosion: {fileID: 1823102363}
 --- !u!65 &1247250002
@@ -10701,7 +10799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357015769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hangar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10740,7 +10838,7 @@ GameObject:
   - component: {fileID: 1387690113}
   - component: {fileID: 1387690112}
   - component: {fileID: 1387690111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hangar_part_03 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11577,6 +11675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: An225
       objectReference: {fileID: 0}
+    - target: {fileID: 2954433801269012104, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11599,11 +11701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.4
+      value: 14.14
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1214.4
+      value: 1509.5
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11702,6 +11804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hangar_part_02
       objectReference: {fileID: 0}
+    - target: {fileID: 450127413515257396, guid: 291c0ca312755dd46aa73682c956d4d5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 969677806995659918, guid: 291c0ca312755dd46aa73682c956d4d5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -11750,6 +11856,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 864f3c81f8e2c5a4386e7ef3e6ab2c9c, type: 2}
+    - target: {fileID: 6023348611141129942, guid: 291c0ca312755dd46aa73682c956d4d5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170592517565970773, guid: 291c0ca312755dd46aa73682c956d4d5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 291c0ca312755dd46aa73682c956d4d5, type: 3}
 --- !u!4 &1546133177 stripped
@@ -13366,7 +13480,7 @@ GameObject:
   - component: {fileID: 2019079252}
   - component: {fileID: 2019079251}
   - component: {fileID: 2019079250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hangar_part_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13689,6 +13803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hangar_part_03
       objectReference: {fileID: 0}
+    - target: {fileID: 6065486691148472166, guid: 5b8a7ba67a2fe244b9233063b154d924, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6874499291213448668, guid: 5b8a7ba67a2fe244b9233063b154d924, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -13733,6 +13851,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7468693450853560760, guid: 5b8a7ba67a2fe244b9233063b154d924, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844209263517296391, guid: 5b8a7ba67a2fe244b9233063b154d924, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b8a7ba67a2fe244b9233063b154d924, type: 3}
 --- !u!4 &2143029931 stripped
@@ -13750,6 +13876,10 @@ PrefabInstance:
     - target: {fileID: 5571590702731463292, guid: 8c8b63c6791f105419846bd43a149dfc, type: 3}
       propertyPath: m_Name
       value: SmokeEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571590702731463292, guid: 8c8b63c6791f105419846bd43a149dfc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8825303125902682373, guid: 8c8b63c6791f105419846bd43a149dfc, type: 3}
       propertyPath: m_RootOrder
