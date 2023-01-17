@@ -10,6 +10,24 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void SetLocationRnadom ()
+    {
+        Globals.location = 0;
+        Debug.Log(Globals.location);
+    }
+
+    public void SetLocation1 ()
+    {
+        Globals.location = 1;
+        Debug.Log(Globals.location);
+    }
+
+    public void SetLocation2 ()
+    {
+        Globals.location = 2;
+        Debug.Log(Globals.location);
+    }
+
     public void QuitGame(){
         Debug.Log("QUIT");
         Application.Quit();
