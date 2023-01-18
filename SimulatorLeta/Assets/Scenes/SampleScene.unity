@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 150499830}
   - component: {fileID: 150499831}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,7 +611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175069686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 293.49, y: 65.6, z: 1138.12}
+  m_LocalPosition: {x: 549.2, y: 20, z: 162}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -915,7 +915,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55376
+  m_Name: pb_Mesh24166
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9856,7 +9856,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -10180,7 +10180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149880434}
   - component: {fileID: 1149880433}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: UIFighter22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10515,6 +10515,9 @@ MonoBehaviour:
   _speed: 200
   _smokeTrail: {fileID: 1817524199}
   _explosion: {fileID: 1823102363}
+  lockOn:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!65 &1247250002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11722,7 +11725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269012104, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2954433801269050024, guid: 561448848aea1ab488eab013d2b18a9c, type: 3}
       propertyPath: m_RootOrder
@@ -11837,6 +11840,7 @@ MonoBehaviour:
   maxThrust: 700
   responsiveness: 30
   lift: 200
+  _explosion: {fileID: 1823102363}
   hud: {fileID: 2081072747}
 --- !u!114 &1504597347
 MonoBehaviour:
@@ -12481,7 +12485,7 @@ GameObject:
   - component: {fileID: 1780468697}
   - component: {fileID: 1780468696}
   - component: {fileID: 1780468695}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Secondary Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12728,15 +12732,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1181771421002118223, guid: c47e85eb71b72bb48a5325e24bd9cddd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1181771421002118223, guid: c47e85eb71b72bb48a5325e24bd9cddd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1181771421002118223, guid: c47e85eb71b72bb48a5325e24bd9cddd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1181771421002118223, guid: c47e85eb71b72bb48a5325e24bd9cddd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12744,7 +12748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1181771421002118223, guid: c47e85eb71b72bb48a5325e24bd9cddd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 43.84
+      value: -2295
       objectReference: {fileID: 0}
     - target: {fileID: 1181771421002118223, guid: c47e85eb71b72bb48a5325e24bd9cddd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13412,7 +13416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011783377}
   - component: {fileID: 2011783378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CameraSwitcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -36,7 +36,7 @@ public class Missile : MonoBehaviour
     [Tooltip("The result of a Raycast hit.")]
     private RaycastHit hit;
     private Vector3 targetPosition;
-
+    public LayerMask lockOn;
 
     void Awake()
     {
@@ -50,6 +50,7 @@ public class Missile : MonoBehaviour
     {
         _smokeTrail.SetActive(false);
         Physics.IgnoreLayerCollision(3, 6);
+        Physics.IgnoreLayerCollision(3, 9);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -58,12 +59,15 @@ public class Missile : MonoBehaviour
         {
             Instantiate(_explosion, collision.transform.position, Quaternion.identity);
             Destroy(collision.collider.gameObject);
-            SceneManager.LoadScene(2);
-             
-            
+            Invoke("EndScreenLoader", 0);
         }
 
         Destroy(gameObject);
+    }
+
+    private void EndScreenLoader()
+    {
+        SceneManager.LoadScene("End of the Game");
     }
 
     private void FireMissile()
@@ -83,42 +87,43 @@ public class Missile : MonoBehaviour
             Vector3 RaycastDirection = RaycastStart1.position - RaycastStart2.position;
             Ray ray = new Ray(RaycastStart1.position, RaycastDirection);
 
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.DrawRay(RaycastStart1.position, RaycastDirection * hit.distance, Color.red);
-            targetPosition = hit.point;
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, lockOn))
+            {
+                Debug.DrawRay(RaycastStart1.position, RaycastDirection * hit.distance, Color.red);
+                targetPosition = hit.point;
             
 
-            if (Input.GetButtonDown("Fire1") && !isFired)
-            {
+                if (Input.GetButtonDown("Fire1") && !isFired)
+                {
                 
-                FireMissile();
-                isFired = true;
-            }
-            else if (!isFired)
+                    FireMissile();
+                    isFired = true;
+                }
+                else if (!isFired)
+                {
+                    _rb.transform.localPosition = positionOffset;
+                    _rb.transform.localRotation = rotationOffset;
+                }
+            } 
+            else
             {
-                _rb.transform.localPosition = positionOffset;
-                _rb.transform.localRotation = rotationOffset;
-            }
-        } 
-        else
-        {
-            Debug.DrawRay(RaycastStart1.position, RaycastDirection * 100000, Color.green);
+                Debug.DrawRay(RaycastStart1.position, RaycastDirection * 100000, Color.green);
 
-            if (Input.GetButtonDown("Fire1") && !isFired)
-            {
-                FireMissile();
-                isFired = true;
+                if (Input.GetButtonDown("Fire1") && !isFired)
+                {
+                    FireMissile();
+                    isFired = true;
+                }
+                else if (!isFired)
+                {
+                    _rb.transform.localPosition = positionOffset;
+                    _rb.transform.localRotation = rotationOffset;
+                }
             }
-            else if (!isFired)
-            {
-                _rb.transform.localPosition = positionOffset;
-                _rb.transform.localRotation = rotationOffset;
-            }
-        }
           
         }
-       
+
+
 
     }
 

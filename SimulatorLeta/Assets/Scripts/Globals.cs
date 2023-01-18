@@ -8,5 +8,5 @@ public class Globals : MonoBehaviour
     //          -> 0 for random location
     //          -> 1 for location 1
     //          -> 2 for location 2
-    public static int location;
+    public static int location = 1;
 }

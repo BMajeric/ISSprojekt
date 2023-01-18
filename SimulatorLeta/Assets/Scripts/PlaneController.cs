@@ -16,6 +16,12 @@ public class PlaneController : MonoBehaviour
     [Tooltip("How much lift force this plane generates as it gains speed.")]
     public float lift = 135f;
 
+    [Tooltip("Explosion model.")]
+    [SerializeField] private GameObject _explosion;
+    private float time = 0f;
+    private float timeDelay = 2f;
+    private int counter = 1;
+
     private float throttle;     // Percentage of maximum engine thrust currently being used.
     private float roll;         // Tilting left to right.
     private float pitch;        // Tilting front to back.
@@ -36,6 +42,27 @@ public class PlaneController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void OnTriggerStay()
+    {
+        if (time >= timeDelay)
+        {
+            Vector3 explosionPosition;
+            if (counter == 1)
+            {
+                explosionPosition = transform.position + new Vector3(20, 0, -30);
+                counter = 0;
+            }
+            else
+            {
+                explosionPosition = transform.position + new Vector3(-20, 0, -30);
+                counter = 1;
+            }
+            Instantiate(_explosion, explosionPosition, Quaternion.identity);
+            time = 0;
+        }
+
+    }
+
     private void HandleInputs() 
     {
         // Set rotational values from our axis inputs
@@ -51,8 +78,10 @@ public class PlaneController : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {   
-        if(!PauseMenu.isPaused){
+    {
+        time = time + 1f * Time.deltaTime;
+        
+        if (!PauseMenu.isPaused){
         HandleInputs();
         UpdateHUD();
         }
