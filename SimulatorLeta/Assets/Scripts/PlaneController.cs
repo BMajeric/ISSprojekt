@@ -27,6 +27,9 @@ public class PlaneController : MonoBehaviour
     private float pitch;        // Tilting front to back.
     private float yaw;          // "Turning" left to rigth.
 
+    public GameObject eksplozija1;
+    public GameObject eksplozija2;
+
     private float responseModifier { // Value used to tweak responsiveness to suit plane's mass.
         get {
             return (rb.mass / 10f) * responsiveness;
@@ -49,12 +52,13 @@ public class PlaneController : MonoBehaviour
             Vector3 explosionPosition;
             if (counter == 1)
             {
-                explosionPosition = transform.position + new Vector3(20, 0, -30);
+                explosionPosition = eksplozija1.transform.position;
                 counter = 0;
+                
             }
             else
             {
-                explosionPosition = transform.position + new Vector3(-20, 0, -30);
+                explosionPosition = eksplozija2.transform.position;
                 counter = 1;
             }
             Instantiate(_explosion, explosionPosition, Quaternion.identity);
