@@ -13,7 +13,7 @@
 ![Snimka zaslona 2025-02-16 024142](https://github.com/user-attachments/assets/5d4cc4b7-9a97-4889-bebe-745e82d19561)
 
 
-Simulator leta što već samo ime govori igra u kojoj se simulira let bojnog aviona kojem je cilj uništiti tenk. Igrač može dodavati thrust s tipkom shift, usporiti tipkom space, roll su tipke A i D, pitch su tipke Q i E i jaw su tipke W i S. Igrač može uništiti tenk tako da postavi nišan na tenk i ispali raketu lijevim klikom.
+Simulator leta, što već samo ime govori, je igra u kojoj se simulira let bojnog aviona kojem je cilj uništiti tenk. Igrač može dodavati thrust s tipkom shift, usporiti tipkom space, roll su tipke A i D, pitch su tipke Q i E i jaw su tipke W i S. Igrač može uništiti tenk tako da postavi nišan na tenk i ispali raketu lijevim klikom.
 ## Tehnologije
 - C#
 - Unity
