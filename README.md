@@ -1,5 +1,5 @@
 # Simulator leta
-3D simulator leta bojnog aviona. Napravljena u Unityu u sklopu predmeta za FER.
+3D simulator leta bojnog aviona. Napravljen u Unityu u sklopu predmeta za FER.
 
 
 ## Opis
@@ -27,9 +27,9 @@ Simulator leta što već samo ime govori igra u kojoj se simulira let bojnog avi
 - Mjenjanje iz dana u noć
 - Smrt i kraj igre
 ## Problemi
-- Nerealna fizika
+- Nerealna brzina aviona
 - Samo 1 raketa
-- Igrač se može dosta lako zabiti pri izlasku iz hangara
+- Igrač se može dosta lako zabiti pri izlasku iz hangara ako ne pazi
 ## Za implementirati
 - Više oružja
 - Više interakcije sa tenkom
