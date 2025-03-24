@@ -19,6 +19,9 @@ The player can control the aircraft by adding thrust using the Shift key, slowin
 
 The goal of the game is to fly out of the hangar, find the enemy tank in the overworld and shoot a missle at it destroying it and finishing the game. 
 
+## Instructions
+Clone the project locally and start the "SimulatorLeta.exe" from the "Bin" folder.
+
 ## Technologies
 - C#
 - Unity
